@@ -1,59 +1,50 @@
 # tiktok-claims-classification-analysis
 Analyse statistique et modélisation prédictive pour la classification des revendications sur TikTok.
 
-TikTok Claims Classification - Analyse Statistique et Régression Logistique
-📌 Présentation du Projet
-Ce projet a été réalisé dans le cadre de la certification Google Advanced Data Analytics. L'objectif principal est d'aider les équipes de modération de TikTok à mieux comprendre et classifier les contenus des utilisateurs.
+# 📱 TikTok Claims Classification - Data Science Project
 
-L'analyse se concentre sur la distinction entre les "claims" (affirmations) et les "opinions", tout en cherchant à prédire le statut de vérification des comptes (vérifié vs non-vérifié) en fonction des caractéristiques des vidéos.
 
-📊 Objectifs Business
-Automatisation : Faciliter le tri des vidéos pour les modérateurs humains.
+## 📌 Présentation du Projet
+Ce projet a pour objectif est d'aider les équipes de modération de TikTok à automatiser la distinction entre les **"claims"** (affirmations) et les **"opinions"**.
 
-Analyse Comportementale : Identifier si les comptes vérifiés ont des habitudes de publication différentes des comptes non-vérifiés.
+L'enjeu est de taille : les comptes vérifiés ayant tendance à publier davantage d'opinions, comprendre leur comportement permet d'optimiser le filtrage des contenus signalés.
 
-Prédiction : Développer un modèle de régression logistique pour prédire le statut verified_status.
+---
 
-🛠️ Technologies Utilisées
-Langage : Python
+## 📊 Objectifs et Analyse
+* **Analyse Statistique :** Vérifier les corrélations entre les métriques de performance des vidéos (vues, partages, likes) et le type de contenu.
+* **Tests d'Hypothèses :** Application de statistiques descriptives et inférentielles pour valider les tendances observées.
+* **Modélisation :** Prédire le `verified_status` (statut de vérification) à l'aide d'une **régression logistique**.
 
-Librairies : * Pandas & NumPy (Manipulation des données)
+---
 
-Matplotlib & Seaborn (Visualisation)
+## 🛠️ Méthodologie
+1.  **Exploration (EDA) :** Nettoyage des données et gestion de la multicolinéarité (exclusion de `video_like_count`).
+2.  **Ingénierie des caractéristiques :** Encodage des variables catégorielles.
+3.  **Modélisation :** Entraînement d'un modèle de régression logistique avec `Scikit-learn`.
+4.  **Évaluation :** Analyse via la matrice de confusion et les scores de classification.
 
-Scipy (Tests d'hypothèses statistiques)
+---
 
-Scikit-learn (Machine Learning - Régression Logistique)
+## 📈 Résultats Clés
+Le modèle de régression logistique a montré une capacité prédictive satisfaisante :
 
-📈 Méthodologie et Étapes
-Exploration des données (EDA) : Analyse des distributions, des valeurs manquantes et des corrélations.
+| Métrique | Score |
+| :--- | :--- |
+| **Précision (Precision)** | 69% |
+| **Rappel (Recall)** | 66% |
+| **Score F1** | 66% |
 
-Tests d'Hypothèses : Réalisation de tests statistiques pour valider les relations entre le type de contenu et le statut du compte.
+> **Insight Majeur :** La **durée de la vidéo** est le facteur le plus influent. Chaque seconde supplémentaire augmente de façon significative la probabilité que le compte soit vérifié.
 
-Prétraitement : Encodage des variables catégorielles et gestion de la multicolinéarité (exclusion de variables trop corrélées comme video_like_count).
+---
 
-Modélisation : Construction et entraînement d'un modèle de régression logistique.
+## 📂 Structure des fichiers
+* `Projet_TIK_Tok_prediction.ipynb` : Analyse complète et code Python.
+* `TikTok_executive_summary.pdf` : Rapport de synthèse destiné aux décideurs.
 
-Évaluation : Utilisation de la matrice de confusion et des scores de précision/rappel.
+---
 
-🚀 Résultats Clés
-Performance du modèle :
+## 👤 Auteur
+**Mohamed Ly** *Doctorant en Économie à l'UCAD | Spécialiste Data Science & Analyse Agricole* [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/)
 
-Précision : 61% à 69% (selon les itérations).
-
-Rappel (Recall) : 84% (très efficace pour identifier les classes positives).
-
-Score F1 : 66%.
-
-Insight majeur : La durée de la vidéo est un prédicteur significatif. Plus une vidéo est longue, plus la probabilité que le compte soit vérifié augmente. Les autres caractéristiques (vues, partages) présentent une association beaucoup plus faible.
-
-📂 Structure du Repository
-Projet_TIK_Tok_prediction.ipynb : Notebook Jupyter contenant l'intégralité du code et de l'analyse.
-
-TikTok_executive_summary.pdf : Résumé synthétique des résultats destiné aux parties prenantes.
-
-data/ : (Optionnel) Dossier contenant le dataset utilisé.
-
-Auteur : Mohamed Ly
-
-Doctorant en Économie | Passionné par la Data Science
